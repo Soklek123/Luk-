@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>มาง้อรันครับ</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: white;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      color: black;
+    }
+
+    .center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .center-text img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .center-text h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .center-text p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .big-word {
+      font-size: 5em;
+      font-weight: bold;
+      color: black;
+    }
+
+    .heart {
+      position: absolute;
+      top: -50px;
+      font-size: 24px;
+      animation: fall linear infinite;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="center-text">
+    <img src="466019500_1562404847813127_2434293141826889244_n.jpg" alt="ง้อรัน">
+    
+    <h1>มาง้อรันครับ</h1>
+    <p>😭ผมขอโทษผมทำผิดไปแล้วผมขอโทษนะ😓</p>
+
+    <!-- 👇 เพิ่มคำว่า ง้อ ขนาดใหญ่ -->
+    <div class="big-word">ง้อๆๆๆๆ🥺</div>
+  </div>
+
+   <script>
+    const createHeart = () => {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerText = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (2 + Math.random() * 3) + 's';
+      heart.style.fontSize = (20 + Math.random() * 20) + 'px';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    };
+
+    setInterval(createHeart, 200);
+  </script>
+
+</body>
+</html>
